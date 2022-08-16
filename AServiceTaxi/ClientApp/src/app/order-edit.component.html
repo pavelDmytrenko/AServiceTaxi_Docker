@@ -1,0 +1,16 @@
+﻿<div *ngIf="loaded">
+    <h2>Edit Order</h2>
+    <ng-template [ngIf]="order?.orderStatus == 1">
+        <order-form-complate [(order)]="order"></order-form-complate>
+        <div class="form-group">
+            <input type="button" value="Save Order Date Comlpate" (click)="saveOrder()" class="btn btn-sm btn-primary" />
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="order?.orderStatus == 2">
+        <order-form-car [(order)]="order" [(freecars)]="freecars"></order-form-car>
+        <div class="form-group">
+            <input type="button" value="Save Order with selected Car" (click)="saveOrderWithCar()" class="btn btn-sm btn-primary" />
+        </div>
+    </ng-template>
+</div>
+<a routerLink="/" class="nav-link">Back</a>

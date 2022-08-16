@@ -1,0 +1,8 @@
+﻿<div *ngIf="loaded">
+    <h2>Edit Car</h2>
+    <car-form [(car)]="car"></car-form>
+    <div class="form-group">
+        <input type="button" value="Save" (click)="saveCar()" class="btn btn-success" />
+    </div>
+</div>
+<a routerLink="/" class="nav-link">Back</a>

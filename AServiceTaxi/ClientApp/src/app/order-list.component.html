@@ -1,0 +1,35 @@
+﻿<br>
+<div>
+    &nbsp;<a routerLink="/createOrder" class=" btn btn-sm btn-primary nav-link">Add Order</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>OrderDate</td>
+            <td>OrderComplateDate</td>
+            <td>OrderAddressSource</td>
+            <td>OrderAddressDestination</td>
+            <td>OrderStatus</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders">
+            <td>{{o?.orderDate}}</td>
+            <td>{{o?.orderComplateDate}}</td>
+            <td>{{o?.orderAddressSource}}</td>
+            <td>{{o?.orderAddressDestination}}</td>
+            <td>{{o?.orderStatus}}</td>
+            <ng-template [ngIf]="o.orderStatus !=3" [ngIfElse]="end_line">
+                <td>
+                    <a [routerLink]="['editOrder', o.orderId]" class="btn btn-sm btn-primary">Edit Order</a>&nbsp;
+                    <button (click)="deleteOrder(o.orderId) " class="btn btn-sm btn-primary">Delete Order</button>
+                </td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #end_line>
+    <td>
+    </td>
+</ng-template>

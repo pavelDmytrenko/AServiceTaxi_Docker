@@ -1,0 +1,24 @@
+﻿<br>
+<div>
+    &nbsp;<a routerLink="/createCar" class=" btn btn-sm btn-primary nav-link">Add Car</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>CarNumber</td>
+            <td>CarModel</td>
+            <td>CarDriverFIO</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of cars">
+            <td>{{c?.carNumber}}</td>
+            <td>{{c?.carModel}}</td>
+            <td>{{c?.carDriverFIO}}</td>
+            <td>
+                <a [routerLink]="['editCar', c.carID]" class="btn btn-sm btn-primary">Edit Car</a>&nbsp;
+                <button (click)="deleteCar(c.carID) " class="btn btn-sm btn-primary">Delete Car</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

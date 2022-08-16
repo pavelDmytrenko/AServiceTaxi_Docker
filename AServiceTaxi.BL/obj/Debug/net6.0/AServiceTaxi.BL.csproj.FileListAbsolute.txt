@@ -1,0 +1,15 @@
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\bin\Debug\net6.0\AServiceTaxi.BL.deps.json
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\bin\Debug\net6.0\AServiceTaxi.BL.dll
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\bin\Debug\net6.0\AServiceTaxi.BL.pdb
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\bin\Debug\net6.0\AServiceTaxi.DL.dll
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\bin\Debug\net6.0\AServiceTaxi.DL.pdb
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.csproj.AssemblyReference.cache
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.AssemblyInfoInputs.cache
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.AssemblyInfo.cs
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.csproj.CoreCompileInputs.cache
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.csproj.CopyComplete
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.dll
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\refint\AServiceTaxi.BL.dll
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\AServiceTaxi.BL.pdb
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi.BL\obj\Debug\net6.0\ref\AServiceTaxi.BL.dll

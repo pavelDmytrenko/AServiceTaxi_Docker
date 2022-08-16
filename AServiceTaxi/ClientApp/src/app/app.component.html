@@ -1,0 +1,18 @@
+﻿<div class="container body-content">
+    <main role="main" class="pb-3">
+        <table style="border: 3px solid #BDBDBD" border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <td rowspan="9" valign="top">
+                    <h4>Main Menu </h4>
+                    <a [routerLink]="['/']" class="btn btn-sm btn-primary">Main Menu</a><br>
+                    <a [routerLink]="['cars']" class="btn btn-sm btn-primary">Cars</a><br>
+                    <a [routerLink]="['orders']" class="btn btn-sm btn-primary">Orders</a>
+                </td>
+            </tr>
+            <tr><router-outlet></router-outlet></tr>
+        </table>
+    </main>
+</div>
+
+
+

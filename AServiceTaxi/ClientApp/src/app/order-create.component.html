@@ -1,0 +1,8 @@
+﻿<div>
+    <h2>Add new Order</h2>
+    <order-form [(order)]="order"></order-form>
+    <div class="form-group">
+        <input type="button" value="Save" (click)="saveOrder()" class="btn btn-sm btn-primary" />
+        <a routerLink="/" class="btn btn-warning">Cancel</a>
+    </div>
+</div>

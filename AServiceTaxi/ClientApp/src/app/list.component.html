@@ -1,0 +1,61 @@
+﻿<table>
+    <td>
+        <h4>Waiting Orders</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>OrderDate</td>
+                    <td>OrderComplateDate</td>
+                    <td>OrderAddressSource</td>
+                    <td>OrderAddressDestination</td>
+                    <td>OrderStatus</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of waitingorders">
+                    <td>{{o?.orderDate}}</td>
+                    <td>{{o?.orderComplateDate}}</td>
+                    <td>{{o?.orderAddressSource}}</td>
+                    <td>{{o?.orderAddressDestination}}</td>
+                    <td>{{o?.orderStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+    <td>
+        <h4>Reserved Cars</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>CarNumber</td>
+                    <td>CarModel</td>
+                    <td>CarDriverFIO</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of reservedcars">
+                    <td>{{c?.carNumber}}</td>
+                    <td>{{c?.carModel}}</td>
+                    <td>{{c?.carDriverFIO}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Free Cars</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>CarNumber</td>
+                    <td>CarModel</td>
+                    <td>CarDriverFIO</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of freecars">
+                    <td>{{c?.carNumber}}</td>
+                    <td>{{c?.carModel}}</td>
+                    <td>{{c?.carDriverFIO}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</table>

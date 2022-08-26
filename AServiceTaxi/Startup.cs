@@ -45,6 +45,9 @@ namespace AServiceTaxi
 
             app.UseRouting();
 
+            app.UseCors(builder =>
+        builder.WithOrigins("http://localhost:4200"));
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -56,9 +59,7 @@ namespace AServiceTaxi
                 
                 if (env.IsDevelopment())
                 {
-                    //spa.UseAngularCliServer(npmScript: "start");
-                    //spa.UseProxyToSpaDevelopmentServer("http://aservicetaxi:4200");
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }

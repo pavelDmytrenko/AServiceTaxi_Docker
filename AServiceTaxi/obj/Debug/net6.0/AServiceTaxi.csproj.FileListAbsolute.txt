@@ -1,9 +1,5 @@
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\appsettings.Development.json
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\appsettings.json
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\ClientApp\angular.json
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\ClientApp\package-lock.json
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\ClientApp\package.json
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\ClientApp\tsconfig.json
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\AServiceTaxi.exe
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\AServiceTaxi.deps.json
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\AServiceTaxi.runtimeconfig.json
@@ -65,5 +61,3 @@ D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\r
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\AServiceTaxi.pdb
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\AServiceTaxi.genruntimeconfig.cache
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\ref\AServiceTaxi.dll
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\AServiceTaxi.Properties.Resources.resources
-D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\obj\Debug\net6.0\AServiceTaxi.csproj.GenerateResource.cache

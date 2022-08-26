@@ -46,7 +46,7 @@ namespace AServiceTaxi
             app.UseRouting();
 
             app.UseCors(builder =>
-        builder.WithOrigins("http://localhost:4200"));
+                        builder.WithOrigins("http://localhost:4200"));
 
             app.UseEndpoints(endpoints =>
             {

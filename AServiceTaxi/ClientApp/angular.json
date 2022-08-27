@@ -36,5 +36,8 @@
       }
     }
   },
-  "defaultProject": "AServiceTaxi"
+  "defaultProject": "AServiceTaxi",
+  "cli": {
+    "analytics": "70194f25-9163-4d8e-a351-52f8cb086ecd"
+  }
 }

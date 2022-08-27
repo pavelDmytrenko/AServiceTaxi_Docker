@@ -6,14 +6,20 @@ using Microsoft.EntityFrameworkCore;
 using AServiceTaxi.DL;
 using AServiceTaxi.BL;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.Extensions.Configuration;
 
 namespace AServiceTaxi
 {
     public class Startup
     {
+        IConfiguration Configuration { get; set; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = "Server=(localdb)\\mssqllocaldb;Database=ATaxiServiceDB;Trusted_Connection=True;";
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TaxiContext>(options => options.UseSqlServer(connectionString));
 
             services.AddScoped<IDbContext, TaxiContext>();

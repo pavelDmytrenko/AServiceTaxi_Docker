@@ -66,3 +66,8 @@ D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\p
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\appsettings.json
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\AServiceTaxi.deps.json
 D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\AServiceTaxi.runtimeconfig.json
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\published\web.config
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\published\appsettings.Development.json
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\published\appsettings.json
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\published\AServiceTaxi.deps.json
+D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\AServiceTaxi\bin\Debug\net6.0\published\published\AServiceTaxi.runtimeconfig.json

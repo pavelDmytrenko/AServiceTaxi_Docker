@@ -12,11 +12,11 @@ COPY ["AServiceTaxi.BL/AServiceTaxi.BL.csproj", "AServiceTaxi.BL/"]
 COPY ["AServiceTaxi.DL/AServiceTaxi.DL.csproj", "AServiceTaxi.DL/"]
 RUN dotnet restore "AServiceTaxi/AServiceTaxi.csproj"
 COPY . .
-WORKDIR /build
+WORKDIR /build/AServiceTaxi
 RUN dotnet publish -c release -o published --no-cache
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=build /build/published ./
+COPY --from=build /build/AServiceTaxi/published ./
 ENTRYPOINT ["dotnet", "AServiceTaxi.dll"]

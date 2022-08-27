@@ -13,7 +13,7 @@ namespace AServiceTaxi
             {
                 _orderService = orderService;
             }
-        [HttpGet]
+            [HttpGet]
             public IEnumerable<DL.Order> Get()
             {
                 return _orderService.GetOrders();

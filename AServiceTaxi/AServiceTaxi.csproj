@@ -13,6 +13,7 @@
 	<RootNamespace>AServiceTaxi</RootNamespace>
 	<UserSecretsId>179effd3-2b8e-4559-a3aa-b00262e94599</UserSecretsId>
 	<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

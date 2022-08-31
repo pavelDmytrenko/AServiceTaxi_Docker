@@ -1,0 +1,24 @@
+version: "3.4"
+services:
+  aservicetaxi:    
+    container_name: aservicetaxi
+    build:      
+      context: D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker
+      dockerfile:  D:\Repos\AServiseTaxi_Docker\AServiceTaxi_Docker\Dockerfile
+    extra_hosts:
+      mssql: 192.168.0.205
+    depends_on: [ mssql ]
+    ports:
+      - "5000:80"
+
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04"
+    container_name: mssql
+    extra_hosts:
+      mssql: 192.168.0.205
+    hostname: mssql
+    environment:
+      SA_PASSWORD: "1qaz@WSX"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"

@@ -1,4 +1,4 @@
-AServiceTaxi
+ASERVICETAXI
 Service Taxi. ASP.Net Core 6 Application with Angular 10. Using Docker compose(Linux). 
  
 Make docker container of app link with exixsting info about docker  https://medium.com/bb-tutorials-and-thoughts/dockerizing-angular-app-with-net-core-backend-734ea2df84df
@@ -26,11 +26,11 @@ docker exec -it ang-dotnet-ui /bin/sh
 
 For Starting DB at Docker container
 
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=1qaz@WSX" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04 
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=HIDDEN" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04 
 
 After that we have 2 container and should change connect to db at appsettings.json file (for my system )
   "ConnectionStrings": {
-    "DefaultConnection": "Server=mssql,1433;User Id=sa;Password=1qaz@WSX;"
+    "DefaultConnection": "Server=mssql,1433;User Id=sa;Password=HIDDEN;"
 		
 We can check connection from Managment Studio - we can connect to server with this credentials.
 

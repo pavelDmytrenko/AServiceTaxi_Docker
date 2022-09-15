@@ -2,25 +2,26 @@
 <div>
     &nbsp;<a routerLink="/createOrder" class=" btn btn-sm btn-primary nav-link">Add Order</a>
 </div>
-<table class="table table-striped">
-    <thead>
+<table style="margin: 3px 3px 5px 5px" class="table">
+    <thead style=" background-color: #bde9ba;">
         <tr>
-            <td>OrderDate</td>
-            <td>OrderComplateDate</td>
-            <td>OrderAddressSource</td>
-            <td>OrderAddressDestination</td>
-            <td>OrderStatus</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">OrderDate</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">OrderComplateDate</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">OrderAddressSource</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">OrderAddressDestination</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">OrderStatus</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center"></td>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let o of orders">
-            <td>{{o?.orderDate}}</td>
-            <td>{{o?.orderComplateDate}}</td>
-            <td>{{o?.orderAddressSource}}</td>
-            <td>{{o?.orderAddressDestination}}</td>
-            <td>{{o?.orderStatus}}</td>
+    <tbody style=" background-color: darkgrey;">
+        <tr style="border: 3px solid #BDBDBD; text-align:center" *ngFor="let o of orders">
+            <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderDate}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderComplateDate}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderAddressSource}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderAddressDestination}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderStatus}}</td>
             <ng-template [ngIf]="o.orderStatus !=3" [ngIfElse]="end_line">
-                <td>
+                <td style="border: 3px solid #BDBDBD; text-align:center">
                     <a [routerLink]="['editOrder', o.orderId]" class="btn btn-sm btn-primary">Edit Order</a>&nbsp;
                     <button (click)="deleteOrder(o.orderId) " class="btn btn-sm btn-primary">Delete Order</button>
                 </td>

@@ -2,20 +2,21 @@
 <div>
     &nbsp;<a routerLink="/createCar" class=" btn btn-sm btn-primary nav-link">Add Car</a>
 </div>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <td>CarNumber</td>
-            <td>CarModel</td>
-            <td>CarDriverFIO</td>
+<table style="margin: 3px 3px 3px 3px" class="table">
+    <thead style="background-color: #bde9ba;" >
+        <tr  style="border: 3px solid #BDBDBD; text-align: center">
+            <td  style="border: 3px solid #BDBDBD; text-align: center">CarNumber</td>
+            <td  style="border: 3px solid #BDBDBD; text-align: center">CarModel</td>
+            <td  style="border: 3px solid #BDBDBD; text-align: center">CarDriverFIO</td>
+            <td style="background-color: #bde9ba;"></td>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let c of cars">
-            <td>{{c?.carNumber}}</td>
-            <td>{{c?.carModel}}</td>
-            <td>{{c?.carDriverFIO}}</td>
-            <td>
+    <tbody style="background-color: cyan">
+        <tr style="border: 3px solid #BDBDBD; text-align: center" *ngFor="let c of cars">
+            <td style="border: 3px solid #BDBDBD; text-align: center">{{c?.carNumber}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align: center">{{c?.carModel}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align: center">{{c?.carDriverFIO}}</td>
+            <td style="border: 3px solid #BDBDBD; text-align: center">
                 <a [routerLink]="['editCar', c.carID]" class="btn btn-sm btn-primary">Edit Car</a>&nbsp;
                 <button (click)="deleteCar(c.carID) " class="btn btn-sm btn-primary">Delete Car</button>
             </td>

@@ -1,59 +1,61 @@
-﻿<table>
+﻿<table style="margin: 3px 3px 5px 5px"> 
     <td>
-        <h4>Waiting Orders</h4>
-        <table class="table table-striped">
-            <thead>
+        <table border="1" cellpadding="10" cellspacing="0" class="table">
+            <thead style="background-color: #bde9ba;">
+                <tr><td  style="border: 3px solid #BDBDBD; text-align: center" colspan="5" ><h4>Waiting Orders</h4></td></tr>
                 <tr>
-                    <td>OrderDate</td>
-                    <td>OrderComplateDate</td>
-                    <td>OrderAddressSource</td>
-                    <td>OrderAddressDestination</td>
-                    <td>OrderStatus</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >OrderDate</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >OrderComplDate</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >OrderAddrSource</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >OrderAddrDestination</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >OrderStatus</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: darkgrey">
                 <tr *ngFor="let o of waitingorders">
-                    <td>{{o?.orderDate}}</td>
-                    <td>{{o?.orderComplateDate}}</td>
-                    <td>{{o?.orderAddressSource}}</td>
-                    <td>{{o?.orderAddressDestination}}</td>
-                    <td>{{o?.orderStatus}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderDate}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderComplateDate}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderAddressSource}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderAddressDestination}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{o?.orderStatus}}</td>
                 </tr>
             </tbody>
         </table>
     </td>
     <td>
-        <h4>Reserved Cars</h4>
-        <table class="table table-striped">
-            <thead>
+        
+        <table style="margin: 3px" border="1" cellpadding="10" cellspacing="0" class="table">
+            <thead style="background-color: #bde9ba;">
+                <tr><td style="border: 3px solid #BDBDBD; text-align: center" colspan="5"><h4>Reserved Cars</h4></td></tr>
                 <tr>
-                    <td>CarNumber</td>
-                    <td>CarModel</td>
-                    <td>CarDriverFIO</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarNumber</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarModel</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarDriver</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: orangered">
                 <tr *ngFor="let c of reservedcars">
-                    <td>{{c?.carNumber}}</td>
-                    <td>{{c?.carModel}}</td>
-                    <td>{{c?.carDriverFIO}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carNumber}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carModel}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carDriverFIO}}</td>
                 </tr>
             </tbody>
         </table>
-        <h4>Free Cars</h4>
-        <table class="table table-striped">
-            <thead>
+        
+        <table style="margin: 3px 3px 3px 3px" border="1" cellpadding="10" cellspacing="0" class="table">
+            <thead style="background-color: #bde9ba;">
+                <tr><td style="border: 3px solid #BDBDBD; text-align: center" colspan="5"><h4>Free Cars</h4></td></tr>
                 <tr>
-                    <td>CarNumber</td>
-                    <td>CarModel</td>
-                    <td>CarDriverFIO</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarNumber</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarModel</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center" >CarDriver</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="background-color: cyan">
                 <tr *ngFor="let c of freecars">
-                    <td>{{c?.carNumber}}</td>
-                    <td>{{c?.carModel}}</td>
-                    <td>{{c?.carDriverFIO}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carNumber}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carModel}}</td>
+                    <td style="border: 3px solid #BDBDBD; text-align:center">{{c?.carDriverFIO}}</td>
                 </tr>
             </tbody>
         </table>

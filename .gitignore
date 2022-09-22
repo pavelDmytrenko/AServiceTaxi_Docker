@@ -12,3 +12,4 @@ docker-compose.*
 **/node_modules
 **/published
 **/dist
+**/*.js*

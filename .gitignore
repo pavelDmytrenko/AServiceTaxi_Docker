@@ -6,3 +6,9 @@ packages/**/*
 /**/*.user
 bin/**/*
 obj/**/*
+lucky*
+docker-compose.*
+**/Dockerfile*
+**/node_modules
+**/published
+**/dist

@@ -1,5 +1,6 @@
 ﻿using AServiceTaxi.DL;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AServiceTaxi.BL
 {
@@ -14,7 +15,7 @@ namespace AServiceTaxi.BL
             _carRepository = carRepository;
         }
 
-        public Order GetOrder(int? id)
+        public Order GetOrder(int id)
         {
             return _orderRepository.GetOrderById(id);
         }
@@ -24,37 +25,35 @@ namespace AServiceTaxi.BL
             return _orderRepository.GetOrder();
         }
 
-        public void AddOrder(Order order)
+        public Order AddOrder(Order order)
         {
-            if (order.OrderId == 0)
+            order.OrderStatus = (int)OrderStatus.Waiting;
+            _orderRepository.AddOrder(order);
+            return order;
+        }
+        public void UpdateOrder(Order order)
+        {
+            var carEntity = _carRepository.GetCarById(order.CarID);
+            var orderEntity = _orderRepository.GetOrderById(order.OrderId);
+            if (order.OrderStatus == (int)OrderStatus.InProgress)
             {
-                order.OrderStatus = ((int)OrderStatus.Waiting);
-                _orderRepository.AddOrder(order);
+                carEntity.CarReady = true;
+                _carRepository.SaveChanges();
+                orderEntity.OrderComplateDate = order.OrderComplateDate;
+                orderEntity.OrderStatus = (int)OrderStatus.Done;
+                _orderRepository.SaveChanges();
             }
-            else if (order.OrderId > 0)
+            else if (order.OrderStatus == (int)OrderStatus.Waiting)
             {
-                var carEntity = _carRepository.GetCarById(order.CarID);
-                var orderEntity = _orderRepository.GetOrderById(order.OrderId);
-                if (order.OrderStatus == (int)OrderStatus.InProgress)
-                {
-                    carEntity.CarReady = true;
-                    _carRepository.SaveChanges();
-                    orderEntity.OrderComplateDate = order.OrderComplateDate;
-                    orderEntity.OrderStatus = ((int) OrderStatus.Done);
-                    _orderRepository.SaveChanges();
-                }
-                else if (order.OrderStatus == (int)OrderStatus.Waiting)
-                {
-                    carEntity.CarReady = false;
-                    _carRepository.SaveChanges();
-                    orderEntity.OrderStatus = ((int)OrderStatus.InProgress);
-                    orderEntity.CarID = order.CarID;
-                    _orderRepository.SaveChanges();
-                }
+                carEntity.CarReady = false;
+                _carRepository.SaveChanges();
+                orderEntity.OrderStatus = (int)OrderStatus.InProgress;
+                orderEntity.CarID = order.CarID;
+                _orderRepository.SaveChanges();
             }
         }
 
-            public Order DelOrder(int id)
+            public void DelOrder(int id)
             {
             var orderEntityDel = _orderRepository.GetOrderById(id);
             if (orderEntityDel != null)
@@ -67,10 +66,10 @@ namespace AServiceTaxi.BL
 
                 }
                 _orderRepository.DelOrder(orderEntityDel);
-                return orderEntityDel;
+                //return orderEntityDel;
             }
 
-            return null;
+            //return null;
             }
     }
 }

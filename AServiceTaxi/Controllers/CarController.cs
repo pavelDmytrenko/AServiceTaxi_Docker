@@ -1,6 +1,7 @@
 ﻿using AServiceTaxi.BL;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net;
 
 namespace AServiceTaxi
 {
@@ -36,10 +37,22 @@ namespace AServiceTaxi
             return BadRequest(ModelState);
         }
 
+        [HttpPut]
+        public IActionResult Put(DL.Car car)
+        {
+            if (ModelState.IsValid)
+            {
+                _carService.UpdateCar(car);
+                return Ok();
+            }
+            return BadRequest(ModelState);
+        }  
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_carService.DeleteCar(id));
+            _carService.DeleteCar(id);
+            return Ok();
         }
     }
 }

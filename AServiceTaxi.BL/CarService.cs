@@ -1,4 +1,5 @@
 ﻿using AServiceTaxi.DL;
+using System.Runtime.CompilerServices;
 
 namespace AServiceTaxi.BL
 {
@@ -9,7 +10,7 @@ namespace AServiceTaxi.BL
         {
             _carRepository = dbContext;
         }
-        public Car GetCarByID(int? id)
+        public Car GetCarByID(int id)
         {
             return _carRepository.GetCarById(id);
         }
@@ -18,33 +19,28 @@ namespace AServiceTaxi.BL
             return _carRepository.GetAllCars();
         }
 
-        public void AddCar(Car car)
+        public Car AddCar(Car car)
+        {
+            _carRepository.AddCar(car);
+            return car; 
+        }
+        public void UpdateCar(Car car)
         {
             var carEntity = _carRepository.GetCarById(car.CarID);
-            if (carEntity == null)
-            { 
-                _carRepository.AddCar(car);
-            }
-            else
-            {
-                carEntity.CarNumber = car.CarNumber;
-                carEntity.CarModel = car.CarModel;
-                carEntity.CarDriverFIO = car.CarDriverFIO;
-                carEntity.CarReady = car.CarReady;
-                _carRepository.SaveChanges();
-            }
+            carEntity.CarNumber = car.CarNumber;
+            carEntity.CarModel = car.CarModel;
+            carEntity.CarDriverFIO = car.CarDriverFIO;
+            carEntity.CarReady = car.CarReady;
+            _carRepository.SaveChanges();
         }
 
-        public Car DeleteCar(int id)
+        public void DeleteCar(int id)
         {
             var carEntity = _carRepository.GetCarById(id);
             if (carEntity != null)
             {
                 _carRepository.DeleteCar(carEntity);
-                return carEntity;
             }
-
-            return null;
         }
     }
 }

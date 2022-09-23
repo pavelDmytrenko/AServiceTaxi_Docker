@@ -5,10 +5,11 @@ namespace AServiceTaxi.BL
 { 
     public interface IOrderService
     {
-        Order GetOrder(int? id);
+        Order GetOrder(int id);
         List<Order> GetOrders();
-        void AddOrder(Order order);
-        Order DelOrder(int id);
+        Order AddOrder(Order order);
+        void UpdateOrder(Order order);
+        void DelOrder(int id);
 
     }
 }

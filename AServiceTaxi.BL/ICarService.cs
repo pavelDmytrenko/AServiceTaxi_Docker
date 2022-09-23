@@ -4,9 +4,10 @@ namespace AServiceTaxi.BL
 {
     public interface ICarService
     {
-        Car GetCarByID(int? id);
+        Car GetCarByID(int id);
         List<Car> GetAllCars();
-        void AddCar(Car car);
-        Car DeleteCar(int id);
+        Car AddCar(Car car);
+        void UpdateCar(Car car);
+        void DeleteCar(int id);
     }
 }

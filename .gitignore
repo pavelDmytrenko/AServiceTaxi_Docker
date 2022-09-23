@@ -13,3 +13,4 @@ docker-compose.*
 **/published
 **/dist
 **/*.js*
+**/*.csproj

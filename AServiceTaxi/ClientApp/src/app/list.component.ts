@@ -22,11 +22,6 @@ export class ListComponent implements OnInit {
         this.loadReservedCars();
         this.loadWaitingOrders();
     }
-    loadCars() {
-        this.dataService.getCars().subscribe((data: Car[]) => {
-            this.cars = data;
-        });
-    }
     loadFreeCars() {
         this.dataService.getCars().subscribe((data: Car[]) =>{
             this.freecars = data;
@@ -39,20 +34,11 @@ export class ListComponent implements OnInit {
             this.reservedcars=this.reservedcars.filter(c => c.carReady==false);
         });
     }
-    loadOrders() {
-            this.dataService.getOrders().subscribe((data: Order[]) => this.orders = data);
-    }
     loadWaitingOrders() {
         this.dataService.getOrders().subscribe((data: Order[]) => {
             this.waitingorders = data;
             this.waitingorders = this.waitingorders.filter(o => o.orderStatus == OrderStatus.Waiting);
         });
-    }
-    deleteCar(id: number) {
-        this.dataService.deleteCar(id).subscribe(data => this.loadCars());
-    }
-    deleteOrder(id: number) {
-        this.dataService.deleteOrder(id).subscribe(data => this.loadOrders());
     }
     
 }

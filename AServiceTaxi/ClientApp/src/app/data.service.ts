@@ -36,11 +36,11 @@ export class DataService {
     }
     updateCar(car: Car) {
 
-        return this.http.post(this.urlcar, car);
+        return this.http.put(this.urlcar, car);
     }
     updateOrder(order: Order) {
 
-        return this.http.post(this.urlorder, order);
+        return this.http.put(this.urlorder, order);
     }
     deleteCar(id: number) {
         return this.http.delete(this.urlcar + '/' + id);

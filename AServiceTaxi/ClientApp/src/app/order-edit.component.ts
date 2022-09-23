@@ -36,24 +36,12 @@ export class OrderEditComponent implements OnInit {
     }
 
     saveOrder() {
-   /*         this.dataService.getCar(this.order.carID).
-                subscribe((data: Car) => {
-                    this.car = data;
-                    this.car.carReady = true;
-                    this.dataService.updateCar(this.car).subscribe(data => console.log("Sucsses. Car is free."));
-                });
-   */     this.dataService.updateOrder(this.order).subscribe(data => this.router.navigateByUrl("/"));
+     this.dataService.updateOrder(this.order).subscribe(data => this.router.navigateByUrl("/"));
         this.loaded = false;
     }
 
     saveOrderWithCar() {
- /*       this.dataService.getCar(this.order.carID).
-            subscribe((data: Car) => {
-                this.car = data;
-                this.car.carReady = false;
-                this.dataService.updateCar(this.car).subscribe(data => console.log("Sucsses. Car is reserved!"));
-            });
-   */     this.dataService.updateOrder(this.order).subscribe(data => this.router.navigateByUrl("/"));
+     this.dataService.updateOrder(this.order).subscribe(data => this.router.navigateByUrl("/"));
         this.loaded = false;
     }
 }

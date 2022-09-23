@@ -37,10 +37,22 @@ namespace AServiceTaxi
                 return BadRequest(ModelState);
             }
 
-            [HttpDelete("{id}")]
+            [HttpPut]
+            public IActionResult Put(DL.Order order)
+            {
+            if (ModelState.IsValid)
+            {
+                _orderService.UpdateOrder(order);
+                return Ok();
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpDelete("{id}")]
             public IActionResult Delete(int id)
             {
-                return Ok(_orderService.DelOrder(id));
+            _orderService.DelOrder(id);
+                return Ok();
             }
         }
     }

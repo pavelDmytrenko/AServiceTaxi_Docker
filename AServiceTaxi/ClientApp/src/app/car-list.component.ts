@@ -4,7 +4,7 @@ import { Car } from './car';
 
 
 @Component({
-    templateUrl: './car-list.component.html'
+    templateUrl: "./car-list.component.html"
 })
 export class CarListComponent implements OnInit {
 

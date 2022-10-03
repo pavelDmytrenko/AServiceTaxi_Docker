@@ -32,7 +32,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+    imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
     declarations: [AppComponent, ListComponent, CarListComponent, OrderListComponent, CarCreateComponent, OrderCreateComponent, CarEditComponent, OrderEditComponent,
         CarFormComponent, OrderFormComponent, OrderFormComplateComponent, OrderFormCarComponent, NotFoundComponent],
     providers: [DataService],

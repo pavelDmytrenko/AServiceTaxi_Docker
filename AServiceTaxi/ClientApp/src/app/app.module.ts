@@ -17,7 +17,7 @@ import { OrderCreateComponent } from './order-create.component';
 import { CarEditComponent } from './car-edit.component';
 import { OrderEditComponent } from './order-edit.component';
 import { NotFoundComponent } from './not-found.component';
-
+import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
 
 const appRoutes: Routes = [
@@ -32,7 +32,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
+    imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
     declarations: [AppComponent, ListComponent, CarListComponent, OrderListComponent, CarCreateComponent, OrderCreateComponent, CarEditComponent, OrderEditComponent,
         CarFormComponent, OrderFormComponent, OrderFormComplateComponent, OrderFormCarComponent, NotFoundComponent],
     providers: [DataService],

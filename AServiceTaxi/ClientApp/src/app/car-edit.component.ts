@@ -11,6 +11,7 @@ export class CarEditComponent implements OnInit {
     id: number;
     car: Car;
     loaded: boolean = false;
+    error: string;
 
     constructor(private dataService: DataService, private router: Router, activeRoute: ActivatedRoute) {
         this.id = Number.parseInt(activeRoute.snapshot.params["id"]);
@@ -19,13 +20,20 @@ export class CarEditComponent implements OnInit {
     ngOnInit() {
         if (this.id)
             this.dataService.getCar(this.id)
-                .subscribe((data: Car) => {
-                    this.car = data;
-                    if (this.car != null) this.loaded = true;
-                });
+                .subscribe(
+                    (data: Car) => {
+                        this.car = data;
+                        if (this.car != null) this.loaded = true;
+                    },
+                    error => this.error = error
+                );
     }
 
     saveCar() {
-        this.dataService.updateCar(this.car).subscribe(data => this.router.navigateByUrl("/"));
+        this.dataService.updateCar(this.car)
+            .subscribe(
+                data => this.router.navigateByUrl("/"),
+                error => this.error = error
+            );
     }
 }

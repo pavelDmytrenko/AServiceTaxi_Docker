@@ -9,11 +9,16 @@ import { Car } from './car';
 export class CarCreateComponent {
 
     car: Car = new Car();
+    error: string;
 
     constructor(private dataService: DataService, private router: Router) { }
 
     saveCar() {
         this.car.carReady = true;
-        this.dataService.createCar(this.car).subscribe(data => this.router.navigateByUrl("/"));
+        this.dataService.createCar(this.car)
+            .subscribe(
+                data => this.router.navigateByUrl("/"),
+                error => this.error = error
+            );
     }
 }

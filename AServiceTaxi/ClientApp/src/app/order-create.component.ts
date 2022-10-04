@@ -10,10 +10,15 @@ import { OrderStatus } from './orderStatus';
 export class OrderCreateComponent {
 
     order: Order = new Order();
+    error: string;
 
     constructor(private dataService: DataService, private router: Router) { }
     saveOrder() {
         this.order.orderStatus = OrderStatus.InProgress;
-        this.dataService.createOrder(this.order).subscribe(data => this.router.navigateByUrl("/"));
+        this.dataService.createOrder(this.order)
+            .subscribe(
+                data => this.router.navigateByUrl("/"),
+                error => this.error = error
+            );
     }
 }

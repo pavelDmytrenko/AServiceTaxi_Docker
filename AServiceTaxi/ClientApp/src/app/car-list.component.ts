@@ -9,15 +9,23 @@ import { Car } from './car';
 export class CarListComponent implements OnInit {
 
     cars: Car[];
+    error: string;
+
     constructor(private dataService: DataService) { }
 
     ngOnInit() {
         this.loadCars();
     }
     loadCars() {
-        this.dataService.getCars().subscribe((data: Car[]) => this.cars = data);
+        this.dataService.getCars().subscribe(
+        (data: Car[]) => this.cars = data,
+        error => this.error = error
+        );
     }
     deleteCar(id: number) {
-        this.dataService.deleteCar(id).subscribe(data => this.loadCars());
+        this.dataService.deleteCar(id).subscribe(
+            data => this.loadCars(),
+            error => this.error = error
+        );
     }
 }

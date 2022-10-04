@@ -1,7 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { OrderEditComponent } from './order-edit.component';
 import { NotFoundComponent } from './not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
+import { HttpErrorInterceptor } from './http-error.interceptor';
+
 
 const appRoutes: Routes = [
     { path: '', component: ListComponent },
@@ -35,7 +37,10 @@ const appRoutes: Routes = [
     imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })],
     declarations: [AppComponent, ListComponent, CarListComponent, OrderListComponent, CarCreateComponent, OrderCreateComponent, CarEditComponent, OrderEditComponent,
         CarFormComponent, OrderFormComponent, OrderFormComplateComponent, OrderFormCarComponent, NotFoundComponent],
-    providers: [DataService],
+    providers: [DataService,
+        {provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true      }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

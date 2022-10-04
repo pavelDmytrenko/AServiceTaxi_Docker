@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
     reservedcars: Car[];
     orders: Order[];
     waitingorders: Order[];
+    error: string;
 
     constructor(private dataService: DataService) { }
 
@@ -23,22 +24,31 @@ export class ListComponent implements OnInit {
         this.loadWaitingOrders();
     }
     loadFreeCars() {
-        this.dataService.getCars().subscribe((data: Car[]) =>{
-            this.freecars = data;
-            this.freecars = this.freecars.filter(c => c.carReady);
-        });
+        this.dataService.getCars().subscribe(
+            (data: Car[]) =>{
+                this.freecars = data;
+                this.freecars = this.freecars.filter(c => c.carReady);
+            },
+            error => this.error = error
+        );
     }
     loadReservedCars() {
-        this.dataService.getCars().subscribe((data: Car[]) => {
-            this.reservedcars = data;
-            this.reservedcars=this.reservedcars.filter(c => c.carReady==false);
-        });
+        this.dataService.getCars().subscribe(
+            (data: Car[]) => {
+                this.reservedcars = data;
+                this.reservedcars=this.reservedcars.filter(c => c.carReady==false);
+            },
+            error => this.error = error
+        );
     }
     loadWaitingOrders() {
-        this.dataService.getOrders().subscribe((data: Order[]) => {
-            this.waitingorders = data;
-            this.waitingorders = this.waitingorders.filter(o => o.orderStatus == OrderStatus.Waiting);
-        });
+        this.dataService.getOrders().subscribe(
+            (data: Order[]) => {
+                this.waitingorders = data;
+                this.waitingorders = this.waitingorders.filter(o => o.orderStatus == OrderStatus.Waiting);
+            },
+            error => this.error = error
+        );
     }
     
 }

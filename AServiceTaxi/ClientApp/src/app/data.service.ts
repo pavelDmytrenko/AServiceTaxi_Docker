@@ -1,9 +1,12 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Car } from './car';
 import { Order } from './order';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class DataService {
 
     private urlcar = "/api/cars";
@@ -12,20 +15,20 @@ export class DataService {
     constructor(private http: HttpClient) {
     }
 
-    getCars() {
-        return this.http.get(this.urlcar);
+    getCars(): Observable<Car[]> {
+        return this.http.get<Car[]>(this.urlcar)
     }
 
-    getCar(id: number) {
-        return this.http.get(this.urlcar + '/' + id);
+    getCar(id: number): Observable<Car> {
+        return this.http.get<Car>(this.urlcar + '/' + id);
     }
 
-    getOrders() {
-        return this.http.get(this.urlorder);
+    getOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>(this.urlorder);
     }
 
-    getOrder(id: number) {
-        return this.http.get(this.urlorder + '/' + id);
+    getOrder(id: number): Observable<Order> {
+        return this.http.get<Order>(this.urlorder + '/' + id);
     }
 
     createCar(car: Car) {
